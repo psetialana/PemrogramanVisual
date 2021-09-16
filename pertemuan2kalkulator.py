@@ -16,6 +16,15 @@ def operasi(op):
         if (operator=="+"):
             hasil = hasil + float(v.get())
             v.set(str(hasil))
+        if (operator=="x"):
+            hasil = hasil * float(v.get())
+            v.set(str(hasil))
+        if (operator=="-"):
+            hasil = hasil - float(v.get())
+            v.set(str(hasil))
+        if (operator==":"):
+            hasil = hasil / float(v.get())
+            v.set(str(hasil))
         operator = ""
     else:
         hasil = float(v.get())
@@ -44,9 +53,9 @@ tk.Button(master, text="3", command=lambda:angka("3")).grid(row=3,column=2)
 tk.Button(master, text="0", command=lambda:angka("0")).grid(row=4,column=0)
 tk.Button(master, text="=", command=lambda:operasi("=")).grid(row=4,column=1)
 tk.Button(master, text="+", command=lambda:operasi("+")).grid(row=4,column=2)
-tk.Button(master, text="x").grid(row=5,column=0)
-tk.Button(master, text=":").grid(row=5,column=1)
-tk.Button(master, text="-").grid(row=5,column=2)
+tk.Button(master, text="x", command=lambda:operasi("x")).grid(row=5,column=0)
+tk.Button(master, text=":", command=lambda:operasi(":")).grid(row=5,column=1)
+tk.Button(master, text="-", command=lambda:operasi("-")).grid(row=5,column=2)
 
 
 tk.mainloop()
